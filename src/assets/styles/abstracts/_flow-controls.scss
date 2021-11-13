@@ -1,0 +1,12 @@
+/* horizontal paddings */
+@each $name, $sp in $spacers {
+  .px-#{$name} {
+    padding-inline: rem-calc($sp);
+  }
+}
+/* vertical paddings */
+@each $name, $sp in $spacers {
+  .py-#{$name} {
+    padding-block: rem-calc($sp);
+  }
+}

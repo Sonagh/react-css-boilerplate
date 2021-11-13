@@ -1,0 +1,22 @@
+/* calculate rem */
+@function rem-calc($size) {
+  $remSize: $size / $font-size-base;
+  @return #{$remSize}rem;
+}
+
+/* calculate em */
+@function em-calc($size) {
+  $emSize: $size / $font-size-base;
+  @return #{$emSize}em;
+}
+
+/* get min breakpoints with map get */
+@function breakpoint-min($name, $breakpoints: $breakpoints) {
+  @return map-get($breakpoints, $name);
+}
+
+/* get max breakpoints with map get */
+@function breakpoint-max($name, $breakpoints: $breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return  $min - 0.02;
+}

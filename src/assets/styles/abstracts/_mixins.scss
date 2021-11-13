@@ -1,0 +1,72 @@
+/* position type */
+@mixin position(
+  $type: null,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $zIndex: null
+) {
+  @if $type {
+    position: $type;
+  }
+  @if $top {
+    top: $top;
+  }
+  @if $right {
+    right: $right;
+  }
+  @if $bottom {
+    bottom: $bottom;
+  }
+  @if $left {
+    left: $left;
+  }
+  @if $zIndex {
+    z-index: $zIndex;
+  }
+}
+
+/* media breakpoint up, min-width */
+@mixin media-breakpoint-up($name, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/* media breakpoint down, max-width */
+@mixin media-breakpoint-down($name, $breakpoints: $breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+/* media breakpoint between, min-width and max-width */
+@mixin media-breakpoint-between($lower, $upper, $breakpoints: $breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+// colors
+$white: #fff;
+$black: #000;
+
+$body-color: $white;
+$body-bg: #20232a;
+
+// fonts
+$font-family-base: "Roboto", sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$font-weight-base: $font-weight-medium;
+
+// spaces
+$spacer: 5px;
+$spacers: (
+        xxs: $spacer, // 5
+        xs: $spacer * 2, // 10
+        sm: $spacer * 3, // 15
+        md: $spacer * 5, // 25
+        lg: $spacer * 6 // 30
+);
+
+$sp-xxs: $spacer; // 5
+$sp-xs: $spacer * 2; // 10
+$sp-sm: $spacer * 3; // 15
+$sp-md: $spacer * 5; // 25
+$sp-lg: $spacer * 6; // 30
+
+// screens
+$breakpoints: (
+        xs: 576px,
+        sm: 768px,
+        md: 992px,
+        lg: 1200px,
+        xl: 1920px
+);
+
+// font sizes
+$font-size-xs: 14px;
+
+$font-size-base: $font-size-xs; // 14
+
+// border radius
+$radius: 4px;
+$radius-rounded: 25px;
+$radius-circle: 50%;
+
+$radius-base: $radius;
